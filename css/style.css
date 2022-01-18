@@ -7,3 +7,6 @@
 .list-container {
     background-color: lightgoldenrodyellow;
 }
+.form-error {
+    display: none;
+}

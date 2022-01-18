@@ -10,25 +10,28 @@
     <div class="container">
         <div class="row">
             <div class="col-3 form-container">
-                <form action="" method="post">
+                <form>
                     <div class="mb-3">
                         <label for="studentName" class="form-label">Name</label>
-                        <input id="studentName" type="text" class="form-control" name="studentName">
+                        <div id="studentNameError" class="alert-danger form-error"></div>
+                        <!--<input id="studentName" type="text" class="form-control" pattern="^[A-zА-я]{1,255}$" required>-->
+                        <input id="studentName" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="age">Age</label>
-                        <input id="age" type="text" class="form-control" name="age">
+                        <div id="ageError" class="alert-danger form-error"></div>
+                        <input id="age" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="email">Email</label>
-                        <input id="email" type="text" class="form-control" name="email">
+                        <input id="email" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="score">Score</label>
-                        <input id="score" type="text" class="form-control" name="score">
+                        <input id="score" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-primary" value="Add">
+                        <input id="submit" type="submit" class="btn btn-primary" value="Add">
                     </div>
                 </form>
             </div>
@@ -38,6 +41,8 @@
         </div>
     </div>
     <script type="javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./main.mjs"></script>
+    <script src="js/student.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/handlers.js"></script>
 </body>
 </html>

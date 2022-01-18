@@ -1,4 +1,4 @@
-class StudentModel {
+class Student {
     // закрытое свойство: запрещено его прямое чтение/запись вне кода класса StudentModel
     #email
     // параметры по умолчанию
@@ -33,5 +33,3 @@ class StudentModel {
         return sm
     }
 }
-
-export default StudentModel
