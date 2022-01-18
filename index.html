@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="root"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 form-container">
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label">Name</label>
+                        <input id="studentName" type="text" class="form-control" name="studentName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="age">Age</label>
+                        <input id="age" type="text" class="form-control" name="age">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" class="form-control" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="score">Score</label>
+                        <input id="score" type="text" class="form-control" name="score">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-primary" value="Add">
+                    </div>
+                </form>
+            </div>
+            <div class="col-9 list-container">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+    <script type="javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./main.mjs"></script>
 </body>
 </html>
