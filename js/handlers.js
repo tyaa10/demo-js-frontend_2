@@ -30,13 +30,13 @@ document.getElementsByTagName('form')[0].addEventListener(
                 console.log('error', errorDivs[i])
                 errorDivs[i].style.display = 'none'
             } */
-            // TODO send form data
-            students.unshift(new Student(
+            // TODO send form data to the server
+            /* students.unshift(new Student(
                 nameInput.value,
                 document.getElementById('age').value,
                 document.getElementById('score').value,
                 document.getElementById('email').value
-            ))
+            )) */
             fillStudentList()
         }
     }
