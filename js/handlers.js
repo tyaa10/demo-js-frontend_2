@@ -1,12 +1,14 @@
 // обработчик события "отправка формы"
 document.getElementsByTagName('form')[0].addEventListener(
     'submit',
-    (event) => {
+    async (event) => {
         event.preventDefault()
         event.stopPropagation()
         const errors = new Map()
         const nameInput = document.getElementById('studentName')
         const ageInput = document.getElementById('age')
+        const emailInput = document.getElementById('email')
+        const scoreInput = document.getElementById('score')
         if (!/^[A-ZА-Я][a-zа-я]{1,255}$/.test(nameInput.value)) {
             errors.set(nameInput, '1 - 255 characters')
         } else {
@@ -37,7 +39,30 @@ document.getElementsByTagName('form')[0].addEventListener(
                 document.getElementById('score').value,
                 document.getElementById('email').value
             )) */
-            fillStudentList()
+            const url = 'http://localhost:4000/api/students'
+            const data = {
+                "name": nameInput.value,
+                "age": document.getElementById('age').value,
+                "avgScore": document.getElementById('score').value,
+                "email": document.getElementById('email').value
+            }
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                if (response.status === 201) {
+                    fillStudentList()
+                } else {
+                    alert(`Server Error. Status Code: ${response.status}`)
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+
         }
     }
 )
